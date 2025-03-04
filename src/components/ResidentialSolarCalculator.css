@@ -1,17 +1,31 @@
-.solar-calculator-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: 'Inter', sans-serif;
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Main Container */
+.solar-calculator-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Header Styles */
 .calculator-header {
     text-align: center;
     margin-bottom: 3rem;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .calculator-header h1 {
     color: #1a237e;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -20,6 +34,7 @@
     font-size: 1.1rem;
 }
 
+/* Grid Layout */
 .calculator-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -27,8 +42,9 @@
     margin-bottom: 2rem;
 }
 
+/* Card Styles */
 .calculator-card {
-    background: white;
+    background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -36,19 +52,21 @@
 
 .card-header {
     background: #1a237e;
-    color: white;
+    color: #ffffff;
     padding: 1rem;
 }
 
 .card-header h3 {
     margin: 0;
     font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .card-content {
     padding: 1.5rem;
 }
 
+/* Form Elements */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -58,6 +76,7 @@
     margin-bottom: 0.5rem;
     color: #37474f;
     font-weight: 500;
+    font-size: 0.95rem;
 }
 
 .select-input,
@@ -67,54 +86,44 @@
     border: 1px solid #cfd8dc;
     border-radius: 6px;
     font-size: 1rem;
-    transition: border-color 0.2s;
+    color: #37474f;
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .select-input:focus,
 .number-input:focus {
     border-color: #1a237e;
     outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
 }
 
-.input-with-hint {
-    position: relative;
-}
-
-.input-with-hint small {
-    position: absolute;
-    right: 0;
-    top: -20px;
-    color: #78909c;
-}
-
-.suggestion-box {
-    margin-top: 1rem;
+/* Error Styles */
+.error-banner {
+    background-color: #ffebee;
+    color: #c62828;
     padding: 1rem;
-    background: #e3f2fd;
-    border-radius: 6px;
-    color: #1565c0;
-}
-
-.action-section {
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    border: 1px solid #ffcdd2;
     text-align: center;
-    margin: 2rem 0;
+    font-weight: 500;
 }
 
-.calculate-button {
-    background: #1a237e;
-    color: white;
-    border: none;
-    padding: 1rem 3rem;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background 0.2s;
+.error-message {
+    color: #c62828;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
 }
 
-.calculate-button:hover {
-    background: #283593;
+.select-input.error,
+.number-input.error {
+    border-color: #c62828;
+    background-color: #fff8f8;
 }
 
+/* Results Section */
 .results-container {
     margin-top: 3rem;
 }
@@ -126,7 +135,7 @@
 }
 
 .result-card {
-    background: white;
+    background: #ffffff;
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -137,12 +146,14 @@
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #e3f2fd;
+    font-size: 1.2rem;
 }
 
 .detail-item,
 .cost-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 0.75rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid #eceff1;
@@ -167,47 +178,81 @@
     font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
-    .solar-calculator-container {
-        padding: 1rem;
-    }
-    
-    .calculator-grid,
-    .results-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.error-banner {
-    background-color: #ffebee;
-    color: #c62828;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    border: 1px solid #ffcdd2;
-    text-align: center;
-}
-
-.error-message {
-    color: #c62828;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
+/* Button Styles */
+.calculate-button {
+    background: #1a237e;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
     display: block;
+    margin: 2rem auto;
+    min-width: 200px;
 }
 
-.select-input.error,
-.number-input.error {
-    border-color: #c62828;
-    background-color: #fff8f8;
-}
-
-.form-group {
-    position: relative;
+.calculate-button:hover {
+    background: #283593;
+    transform: translateY(-1px);
 }
 
 .calculate-button:disabled {
     background: #9e9e9e;
     cursor: not-allowed;
+    transform: none;
+}
+
+/* Suggestion Box */
+.suggestion-box {
+    background: #e3f2fd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid #bbdefb;
+}
+
+.suggestion-box h4 {
+    color: #1565c0;
+    margin-bottom: 0.5rem;
+}
+
+.suggestion-box p {
+    color: #1976d2;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .solar-calculator-container {
+        margin: 1rem;
+        padding: 0;
+    }
+
+    .calculator-grid,
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .calculate-button {
+        width: 100%;
+        padding: 0.875rem;
+    }
+}
+
+/* Additional Utility Classes */
+.required-field::after {
+    content: '*';
+    color: #c62828;
+    margin-left: 4px;
 }
 
 .loading {
@@ -215,8 +260,15 @@
     pointer-events: none;
 }
 
-.required-field::after {
-    content: '*';
-    color: #c62828;
-    margin-left: 4px;
+/* Input with hint */
+.input-with-hint {
+    position: relative;
+}
+
+.input-with-hint small {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    color: #78909c;
+    font-size: 0.8rem;
 } 

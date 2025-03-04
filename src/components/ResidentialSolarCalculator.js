@@ -22,7 +22,7 @@ const PANEL_COMPANIES = {
 
 // Inverter Companies Data
 const INVERTER_COMPANIES = {
-    growatt: {
+    Growatt: {
         name: 'Growatt',
         models: [
             { capacity: 2.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15200 },
@@ -77,8 +77,8 @@ const INVERTER_COMPANIES = {
             { capacity: 330.0, strings: 30, mppt: 'Three', phase: 'Three', price: 547000 }
         ]
     },
-    solis: {
-        name: 'Solis',
+    Vsole: {
+        name: 'Vsole',
         models: [
             { capacity: 2.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15200 },
             { capacity: 3.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15500 },
@@ -132,8 +132,8 @@ const INVERTER_COMPANIES = {
             { capacity: 330.0, strings: 30, mppt: 'Three', phase: 'Three', price: 547000 }
         ]
     },
-    goodwe: {
-        name: 'Goodwe',
+    Solaryaan: {
+        name: 'Solaryaan',
         models: [
             { capacity: 2.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15200 },
             { capacity: 3.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15500 },
@@ -333,9 +333,9 @@ const ANGLE_CALCULATIONS = {
 };
 
 // Add function to find appropriate inverter size
-const findSuitableInverter = (totalKW) => {
+const findSuitableInverter = (totalKW, inverterCompany) => {
     // Get all available capacities
-    const availableModels = INVERTER_COMPANIES.growatt.models;
+    const availableModels = INVERTER_COMPANIES[inverterCompany].models;
     
     // Find the first inverter with capacity greater than or equal to the required capacity
     const suitable = availableModels.find(model => model.capacity >= totalKW);
@@ -347,8 +347,8 @@ const ResidentialSolarCalculator = () => {
     const [system, setSystem] = useState({
         panelCompany: '',
         panelWattage: 0,
-        numberOfPanels: 1,
-        inverterCompany: '',
+        numberOfPanels: 6,
+        inverterCompany: 'Vsole',
         meterType: 'GEB',
         roofType: 'flat'
     });
@@ -388,7 +388,7 @@ const ResidentialSolarCalculator = () => {
     });
 
     const [structureDetails, setStructureDetails] = useState({
-        frontColumnHeight: 2, // default front column height in feet
+        frontColumnHeight: 5, // default front column height in feet
         roofType: 'flat'
     });
 
@@ -406,7 +406,7 @@ const ResidentialSolarCalculator = () => {
         const totalWatts = system.panelWattage * system.numberOfPanels;
         const totalKW = totalWatts / 1000;
         
-        const suggestedInverter = findSuitableInverter(totalKW);
+        const suggestedInverter = findSuitableInverter(totalKW, system.inverterCompany);
         
         setCalculations(prev => ({
             ...prev,
@@ -693,7 +693,7 @@ const ResidentialSolarCalculator = () => {
 
             // Calculate total capacity and find suitable inverter
             const totalCapacity = (system.panelWattage * system.numberOfPanels) / 1000;
-            const suggestedInverter = findSuitableInverter(totalCapacity);
+            const suggestedInverter = findSuitableInverter(totalCapacity, system.inverterCompany);
 
             const structure = calculateStructure(system.numberOfPanels);
             const costs = calculateCosts();
