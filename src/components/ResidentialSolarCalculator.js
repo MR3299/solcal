@@ -23,31 +23,169 @@ const PANEL_COMPANIES = {
 // Inverter Companies Data
 const INVERTER_COMPANIES = {
     growatt: {
-        name: 'Vsole',
-        models: {
-            '3KW': 15500,
-            '5KW': 27000,
-            '8KW': 45500,
-            '10KW': 47500
-        }
+        name: 'Growatt',
+        models: [
+            { capacity: 2.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15200 },
+            { capacity: 3.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15500 },
+            { capacity: 3.4, strings: 1, mppt: 'Single', phase: 'Single', price: 15500 },
+            { capacity: 3.6, strings: 1, mppt: 'Single', phase: 'Single', price: 15900 },
+            { capacity: 4.0, strings: 1, mppt: 'Single', phase: 'Single', price: 19800 },
+            { capacity: 4.2, strings: 1, mppt: 'Single', phase: 'Single', price: 19800 },
+            { capacity: 4.7, strings: 1, mppt: 'Single', phase: 'Single', price: 20800 },
+            { capacity: 5.0, strings: 1, mppt: 'Single', phase: 'Single', price: 25000 },
+            { capacity: 5.4, strings: 1, mppt: 'Single', phase: 'Single', price: 25000 },
+            { capacity: 5.0, strings: 2, mppt: 'Dual', phase: 'Single', price: 27000 },
+            { capacity: 5.4, strings: 2, mppt: 'Dual', phase: 'Single', price: 27000 },
+            { capacity: 6.0, strings: 2, mppt: 'Dual', phase: 'Single', price: 28000 },
+            { capacity: 4.0, strings: 1, mppt: 'Single', phase: 'Three', price: 41500 },
+            { capacity: 5.0, strings: 1, mppt: 'Single', phase: 'Three', price: 42500 },
+            { capacity: 6.0, strings: 1, mppt: 'Single', phase: 'Three', price: 43500 },
+            { capacity: 7.0, strings: 1, mppt: 'Single', phase: 'Three', price: 44500 },
+            { capacity: 8.0, strings: 1, mppt: 'Single', phase: 'Three', price: 45500 },
+            { capacity: 9.0, strings: 1, mppt: 'Single', phase: 'Three', price: 46000 },
+            { capacity: 10.0, strings: 1, mppt: 'Single', phase: 'Three', price: 46500 },
+            { capacity: 4.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 42500 },
+            { capacity: 5.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 43500 },
+            { capacity: 6.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 44500 },
+            { capacity: 7.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 45500 },
+            { capacity: 8.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 46500 },
+            { capacity: 9.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 47000 },
+            { capacity: 10.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 47500 },
+            { capacity: 12.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 54000 },
+            { capacity: 15.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 56000 },
+            { capacity: 15.0, strings: 3, mppt: 'Dual', phase: 'Three', price: 58500 },
+            { capacity: 18.0, strings: 3, mppt: 'Dual', phase: 'Three', price: 64000 },
+            { capacity: 20.0, strings: 3, mppt: 'Dual', phase: 'Three', price: 68000 },
+            { capacity: 20.0, strings: 4, mppt: 'Dual', phase: 'Three', price: 72000 },
+            { capacity: 25.0, strings: 4, mppt: 'Dual', phase: 'Three', price: 81000 },
+            { capacity: 30.0, strings: 4, mppt: 'Dual', phase: 'Three', price: 97000 },
+            { capacity: 30.0, strings: 6, mppt: 'Dual', phase: 'Three', price: 102000 },
+            { capacity: 35.0, strings: 6, mppt: 'Dual', phase: 'Three', price: 107000 },
+            { capacity: 40.0, strings: 9, mppt: 'Three', phase: 'Three', price: 136000 },
+            { capacity: 50.0, strings: 9, mppt: 'Three', phase: 'Three', price: 145000 },
+            { capacity: 60.0, strings: 12, mppt: 'Three', phase: 'Three', price: 162000 },
+            { capacity: 70.0, strings: 12, mppt: 'Three', phase: 'Three', price: 175000 },
+            { capacity: 80.0, strings: 16, mppt: 'Three', phase: 'Three', price: 210000 },
+            { capacity: 100.0, strings: 16, mppt: 'Three', phase: 'Three', price: 235000 },
+            { capacity: 100.0, strings: 24, mppt: 'Three', phase: 'Three', price: 245000 },
+            { capacity: 110.0, strings: 24, mppt: 'Three', phase: 'Three', price: 252000 },
+            { capacity: 120.0, strings: 24, mppt: 'Three', phase: 'Three', price: 270000 },
+            { capacity: 125.0, strings: 24, mppt: 'Three', phase: 'Three', price: 280000 },
+            { capacity: 135.0, strings: 32, mppt: 'Three', phase: 'Three', price: 300000 },
+            { capacity: 225.0, strings: 24, mppt: 'Three', phase: 'Three', price: 385000 },
+            { capacity: 330.0, strings: 30, mppt: 'Three', phase: 'Three', price: 527000 },
+            { capacity: 330.0, strings: 30, mppt: 'Three', phase: 'Three', price: 547000 }
+        ]
     },
     solis: {
-        name: 'Solaryaan',
-        models: {
-            '3KW': 15500,
-            '5KW': 27000,
-            '8KW': 45500,
-            '10KW': 47500
-        }
+        name: 'Solis',
+        models: [
+            { capacity: 2.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15200 },
+            { capacity: 3.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15500 },
+            { capacity: 3.4, strings: 1, mppt: 'Single', phase: 'Single', price: 15500 },
+            { capacity: 3.6, strings: 1, mppt: 'Single', phase: 'Single', price: 15900 },
+            { capacity: 4.0, strings: 1, mppt: 'Single', phase: 'Single', price: 19800 },
+            { capacity: 4.2, strings: 1, mppt: 'Single', phase: 'Single', price: 19800 },
+            { capacity: 4.7, strings: 1, mppt: 'Single', phase: 'Single', price: 20800 },
+            { capacity: 5.0, strings: 1, mppt: 'Single', phase: 'Single', price: 25000 },
+            { capacity: 5.4, strings: 1, mppt: 'Single', phase: 'Single', price: 25000 },
+            { capacity: 5.0, strings: 2, mppt: 'Dual', phase: 'Single', price: 27000 },
+            { capacity: 5.4, strings: 2, mppt: 'Dual', phase: 'Single', price: 27000 },
+            { capacity: 6.0, strings: 2, mppt: 'Dual', phase: 'Single', price: 28000 },
+            { capacity: 4.0, strings: 1, mppt: 'Single', phase: 'Three', price: 41500 },
+            { capacity: 5.0, strings: 1, mppt: 'Single', phase: 'Three', price: 42500 },
+            { capacity: 6.0, strings: 1, mppt: 'Single', phase: 'Three', price: 43500 },
+            { capacity: 7.0, strings: 1, mppt: 'Single', phase: 'Three', price: 44500 },
+            { capacity: 8.0, strings: 1, mppt: 'Single', phase: 'Three', price: 45500 },
+            { capacity: 9.0, strings: 1, mppt: 'Single', phase: 'Three', price: 46000 },
+            { capacity: 10.0, strings: 1, mppt: 'Single', phase: 'Three', price: 46500 },
+            { capacity: 4.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 42500 },
+            { capacity: 5.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 43500 },
+            { capacity: 6.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 44500 },
+            { capacity: 7.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 45500 },
+            { capacity: 8.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 46500 },
+            { capacity: 9.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 47000 },
+            { capacity: 10.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 47500 },
+            { capacity: 12.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 54000 },
+            { capacity: 15.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 56000 },
+            { capacity: 15.0, strings: 3, mppt: 'Dual', phase: 'Three', price: 58500 },
+            { capacity: 18.0, strings: 3, mppt: 'Dual', phase: 'Three', price: 64000 },
+            { capacity: 20.0, strings: 3, mppt: 'Dual', phase: 'Three', price: 68000 },
+            { capacity: 20.0, strings: 4, mppt: 'Dual', phase: 'Three', price: 72000 },
+            { capacity: 25.0, strings: 4, mppt: 'Dual', phase: 'Three', price: 81000 },
+            { capacity: 30.0, strings: 4, mppt: 'Dual', phase: 'Three', price: 97000 },
+            { capacity: 30.0, strings: 6, mppt: 'Dual', phase: 'Three', price: 102000 },
+            { capacity: 35.0, strings: 6, mppt: 'Dual', phase: 'Three', price: 107000 },
+            { capacity: 40.0, strings: 9, mppt: 'Three', phase: 'Three', price: 136000 },
+            { capacity: 50.0, strings: 9, mppt: 'Three', phase: 'Three', price: 145000 },
+            { capacity: 60.0, strings: 12, mppt: 'Three', phase: 'Three', price: 162000 },
+            { capacity: 70.0, strings: 12, mppt: 'Three', phase: 'Three', price: 175000 },
+            { capacity: 80.0, strings: 16, mppt: 'Three', phase: 'Three', price: 210000 },
+            { capacity: 100.0, strings: 16, mppt: 'Three', phase: 'Three', price: 235000 },
+            { capacity: 100.0, strings: 24, mppt: 'Three', phase: 'Three', price: 245000 },
+            { capacity: 110.0, strings: 24, mppt: 'Three', phase: 'Three', price: 252000 },
+            { capacity: 120.0, strings: 24, mppt: 'Three', phase: 'Three', price: 270000 },
+            { capacity: 125.0, strings: 24, mppt: 'Three', phase: 'Three', price: 280000 },
+            { capacity: 135.0, strings: 32, mppt: 'Three', phase: 'Three', price: 300000 },
+            { capacity: 225.0, strings: 24, mppt: 'Three', phase: 'Three', price: 385000 },
+            { capacity: 330.0, strings: 30, mppt: 'Three', phase: 'Three', price: 527000 },
+            { capacity: 330.0, strings: 30, mppt: 'Three', phase: 'Three', price: 547000 }
+        ]
     },
     goodwe: {
-        name: 'Growatt',
-        models: {
-            '3KW': 15500,
-            '5KW': 27000,
-            '8KW': 45500,
-            '10KW': 47500
-        }
+        name: 'Goodwe',
+        models: [
+            { capacity: 2.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15200 },
+            { capacity: 3.0, strings: 1, mppt: 'Single', phase: 'Single', price: 15500 },
+            { capacity: 3.4, strings: 1, mppt: 'Single', phase: 'Single', price: 15500 },
+            { capacity: 3.6, strings: 1, mppt: 'Single', phase: 'Single', price: 15900 },
+            { capacity: 4.0, strings: 1, mppt: 'Single', phase: 'Single', price: 19800 },
+            { capacity: 4.2, strings: 1, mppt: 'Single', phase: 'Single', price: 19800 },
+            { capacity: 4.7, strings: 1, mppt: 'Single', phase: 'Single', price: 20800 },
+            { capacity: 5.0, strings: 1, mppt: 'Single', phase: 'Single', price: 25000 },
+            { capacity: 5.4, strings: 1, mppt: 'Single', phase: 'Single', price: 25000 },
+            { capacity: 5.0, strings: 2, mppt: 'Dual', phase: 'Single', price: 27000 },
+            { capacity: 5.4, strings: 2, mppt: 'Dual', phase: 'Single', price: 27000 },
+            { capacity: 6.0, strings: 2, mppt: 'Dual', phase: 'Single', price: 28000 },
+            { capacity: 4.0, strings: 1, mppt: 'Single', phase: 'Three', price: 41500 },
+            { capacity: 5.0, strings: 1, mppt: 'Single', phase: 'Three', price: 42500 },
+            { capacity: 6.0, strings: 1, mppt: 'Single', phase: 'Three', price: 43500 },
+            { capacity: 7.0, strings: 1, mppt: 'Single', phase: 'Three', price: 44500 },
+            { capacity: 8.0, strings: 1, mppt: 'Single', phase: 'Three', price: 45500 },
+            { capacity: 9.0, strings: 1, mppt: 'Single', phase: 'Three', price: 46000 },
+            { capacity: 10.0, strings: 1, mppt: 'Single', phase: 'Three', price: 46500 },
+            { capacity: 4.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 42500 },
+            { capacity: 5.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 43500 },
+            { capacity: 6.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 44500 },
+            { capacity: 7.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 45500 },
+            { capacity: 8.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 46500 },
+            { capacity: 9.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 47000 },
+            { capacity: 10.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 47500 },
+            { capacity: 12.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 54000 },
+            { capacity: 15.0, strings: 2, mppt: 'Dual', phase: 'Three', price: 56000 },
+            { capacity: 15.0, strings: 3, mppt: 'Dual', phase: 'Three', price: 58500 },
+            { capacity: 18.0, strings: 3, mppt: 'Dual', phase: 'Three', price: 64000 },
+            { capacity: 20.0, strings: 3, mppt: 'Dual', phase: 'Three', price: 68000 },
+            { capacity: 20.0, strings: 4, mppt: 'Dual', phase: 'Three', price: 72000 },
+            { capacity: 25.0, strings: 4, mppt: 'Dual', phase: 'Three', price: 81000 },
+            { capacity: 30.0, strings: 4, mppt: 'Dual', phase: 'Three', price: 97000 },
+            { capacity: 30.0, strings: 6, mppt: 'Dual', phase: 'Three', price: 102000 },
+            { capacity: 35.0, strings: 6, mppt: 'Dual', phase: 'Three', price: 107000 },
+            { capacity: 40.0, strings: 9, mppt: 'Three', phase: 'Three', price: 136000 },
+            { capacity: 50.0, strings: 9, mppt: 'Three', phase: 'Three', price: 145000 },
+            { capacity: 60.0, strings: 12, mppt: 'Three', phase: 'Three', price: 162000 },
+            { capacity: 70.0, strings: 12, mppt: 'Three', phase: 'Three', price: 175000 },
+            { capacity: 80.0, strings: 16, mppt: 'Three', phase: 'Three', price: 210000 },
+            { capacity: 100.0, strings: 16, mppt: 'Three', phase: 'Three', price: 235000 },
+            { capacity: 100.0, strings: 24, mppt: 'Three', phase: 'Three', price: 245000 },
+            { capacity: 110.0, strings: 24, mppt: 'Three', phase: 'Three', price: 252000 },
+            { capacity: 120.0, strings: 24, mppt: 'Three', phase: 'Three', price: 270000 },
+            { capacity: 125.0, strings: 24, mppt: 'Three', phase: 'Three', price: 280000 },
+            { capacity: 135.0, strings: 32, mppt: 'Three', phase: 'Three', price: 300000 },
+            { capacity: 225.0, strings: 24, mppt: 'Three', phase: 'Three', price: 385000 },
+            { capacity: 330.0, strings: 30, mppt: 'Three', phase: 'Three', price: 527000 },
+            { capacity: 330.0, strings: 30, mppt: 'Three', phase: 'Three', price: 547000 }
+        ]
     }
 };
 
@@ -194,6 +332,17 @@ const ANGLE_CALCULATIONS = {
     minFrontHeight: 1 // minimum front height in feet
 };
 
+// Add function to find appropriate inverter size
+const findSuitableInverter = (totalKW) => {
+    // Get all available capacities
+    const availableModels = INVERTER_COMPANIES.growatt.models;
+    
+    // Find the first inverter with capacity greater than or equal to the required capacity
+    const suitable = availableModels.find(model => model.capacity >= totalKW);
+    
+    return suitable || availableModels[availableModels.length - 1]; // Return largest if none found
+};
+
 const ResidentialSolarCalculator = () => {
     const [system, setSystem] = useState({
         panelCompany: '',
@@ -252,22 +401,17 @@ const ResidentialSolarCalculator = () => {
         general: ''
     });
 
-    // Calculate system capacity and update inverter suggestion
+    // Update useEffect to suggest inverter based on system capacity
     useEffect(() => {
         const totalWatts = system.panelWattage * system.numberOfPanels;
         const totalKW = totalWatts / 1000;
-
-        // Suggest inverter size based on system capacity
-        let suggestedInverter = '';
-        if (totalKW <= 3) suggestedInverter = '3KW';
-        else if (totalKW <= 5) suggestedInverter = '5KW';
-        else if (totalKW <= 8) suggestedInverter = '8KW';
-        else suggestedInverter = '10KW';
-
+        
+        const suggestedInverter = findSuitableInverter(totalKW);
+        
         setCalculations(prev => ({
             ...prev,
             totalCapacity: totalKW,
-            suggestedInverter
+            suggestedInverter: suggestedInverter
         }));
     }, [system.panelWattage, system.numberOfPanels]);
 
@@ -484,9 +628,8 @@ const ResidentialSolarCalculator = () => {
             (OTHER_COMPONENTS.earthingKit.price * OTHER_COMPONENTS.earthingKit.quantity) +
             OTHER_COMPONENTS.meterCharges[system.meterType];
 
-        // Inverter Cost
-        const inverterCost = INVERTER_COMPANIES[system.inverterCompany]
-            ?.models[calculations.suggestedInverter] || 0;
+        // Inverter Cost - Fix here
+        const inverterCost = calculations.suggestedInverter ? calculations.suggestedInverter.price : 0;
 
         // Add additional costs and labor to total
         const additionalTotal = Object.values(additionalCosts).reduce((a, b) => a + b, 0);
@@ -533,7 +676,7 @@ const ResidentialSolarCalculator = () => {
         return isValid;
     };
 
-    // Update handle calculate
+    // Update handleCalculate to ensure inverter cost is included
     const handleCalculate = () => {
         if (!validateInputs()) {
             setErrors(prev => ({
@@ -548,9 +691,12 @@ const ResidentialSolarCalculator = () => {
             const panelsPerRow = Math.ceil(Math.sqrt(system.numberOfPanels));
             const numberOfRows = Math.ceil(system.numberOfPanels / panelsPerRow);
 
+            // Calculate total capacity and find suitable inverter
+            const totalCapacity = (system.panelWattage * system.numberOfPanels) / 1000;
+            const suggestedInverter = findSuitableInverter(totalCapacity);
+
             const structure = calculateStructure(system.numberOfPanels);
             const costs = calculateCosts();
-            const totalCapacity = (system.panelWattage * system.numberOfPanels) / 1000; // in kW
 
             setCalculations(prev => ({
                 ...prev,
@@ -560,7 +706,8 @@ const ResidentialSolarCalculator = () => {
                     numberOfRows
                 },
                 structure,
-                costs
+                costs,
+                suggestedInverter
             }));
             
             setErrors({});
@@ -591,6 +738,15 @@ const ResidentialSolarCalculator = () => {
             numberOfPanels: value
         }));
         setErrors(prev => ({ ...prev, numberOfPanels: '', general: '' }));
+    };
+
+    const handleInverterCompanyChange = (e) => {
+        const value = e.target.value;
+        setSystem(prev => ({
+            ...prev,
+            inverterCompany: value
+        }));
+        setErrors(prev => ({ ...prev, inverterCompany: '', general: '' }));
     };
 
     return (
@@ -672,22 +828,27 @@ const ResidentialSolarCalculator = () => {
                         <div className="form-group">
                             <label>Inverter Company</label>
                             <select
-                                className="select-input"
+                                className={`select-input ${errors.inverterCompany ? 'error' : ''}`}
                                 value={system.inverterCompany}
-                                onChange={(e) => setSystem(prev => ({
-                                    ...prev,
-                                    inverterCompany: e.target.value
-                                }))}
+                                onChange={handleInverterCompanyChange}
                             >
                                 <option value="">Select Inverter Company</option>
                                 {Object.entries(INVERTER_COMPANIES).map(([key, company]) => (
                                     <option key={key} value={key}>{company.name}</option>
                                 ))}
                             </select>
+                            {errors.inverterCompany && (
+                                <span className="error-message">{errors.inverterCompany}</span>
+                            )}
                         </div>
                         {calculations.suggestedInverter && (
                             <div className="suggestion-box">
-                                <p>Suggested Inverter: {calculations.suggestedInverter}</p>
+                                <h4>Recommended Inverter Specifications:</h4>
+                                <p>Capacity: {calculations.suggestedInverter.capacity} kW</p>
+                                <p>MPPT: {calculations.suggestedInverter.mppt}</p>
+                                <p>Strings: {calculations.suggestedInverter.strings}</p>
+                                <p>Phase: {calculations.suggestedInverter.phase}</p>
+                                <p>Price: ₹{calculations.suggestedInverter.price}</p>
                             </div>
                         )}
                     </div>
